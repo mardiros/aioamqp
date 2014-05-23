@@ -402,7 +402,7 @@ class AmqpResponse:
             'type': self.frame_type or '',
             'channel': self.channel,
             'size': self.payload_size or '',
-            'frame_end': self.frame_end.decode('ascii', 'ignore') or '',
+            'frame_end': (self.frame_end or '').decode('ascii', 'ignore'),
             'payload': self.frame_payload or '',
         }
         print("""
